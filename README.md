@@ -1,5 +1,4 @@
 # RenataAlbuquerqueArchitect 📐🧱🏡
-<br>
 <hr>
 <h2>📍 Description</h2>
 <p>This project is a portfolio website that showcases my client's architectural designs and projects. It serves as a platform to exhibit her expertise, creativity, and passion for architecture. By creating this portfolio, I aim to present my client's skills to her potential clients, employers, and collaborators in an engaging and visually appealing manner.</p>
@@ -15,7 +14,7 @@
 <p>✔️ Contribution</p>
 <p>✔️ Credits</p>
 <p>✔️ License</p>
-<p>✔️ Contact</p>
+<p>✔️ Contact Me</p>
 
 
 <hr>
