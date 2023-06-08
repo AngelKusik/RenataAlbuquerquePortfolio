@@ -1,5 +1,5 @@
 # RenataAlbuquerqueArchitect 📐🧱🏡
-<hr>
+
 <h2>📍 Description</h2>
 <p>This project is a portfolio website that showcases my client's architectural designs and projects. It serves as a platform to exhibit her expertise, creativity, and passion for architecture. By creating this portfolio, I aim to present my client's skills to her potential clients, employers, and collaborators in an engaging and visually appealing manner.</p>
 
@@ -43,7 +43,8 @@
 <hr>
 <h2>📫 Contact Me</h2>
 <h3>Hi 👋, my name is Angelica Kusik, and I'm a junior Developer</h3>
-<p><h4>A little bit about me:</h4> I recently graduated from a Computer Programming program at Durham College, I just got a Microsoft Azure Az-900 Certification, and besides coding and learning new stuff I ♥ cooking, gardening and the Foo Fighters, of course.</p>
+<h4>A little bit about me:</h4> 
+<p>I recently graduated from a Computer Programming program at Durham College, I just got a Microsoft Azure Az-900 Certification, and besides coding and learning new stuff I ♥ cooking, gardening and the Foo Fighters, of course.</p>
 <p>For any inquiries, please contact me at  **angelicakusik@outlook.com**.</p>
 <p>You can also connect with me on LinkedIn at [www.linkedin.com/in/angelica-kusik].</p>
 
