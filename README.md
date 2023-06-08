@@ -30,9 +30,9 @@
 
 <hr>
 <h2>👩‍💻 Usage</h2>
-- Navigate through the different sections of the website using the navigation menu.
-- Click on project images to view detailed information and additional images.
-- Use the contact form to get in touch with me for inquiries, collaborations, or feedback.
+<p>- Navigate through the different sections of the website using the navigation menu.</p>
+<p>- Click on project images to view detailed information and additional images.</p>
+<p>- Use the contact form to get in touch with me for inquiries, collaborations, or feedback.</p>
 
 
 <hr>
@@ -43,7 +43,7 @@
 <hr>
 <h2>📫 Contact Me</h2>
 <h3>Hi 👋, my name is Angelica Kusik, and I'm a junior Developer</h3>
-<p><span font-weight="bold">A little bit about me:</span> I recently graduated from a Computer Programming program at Durham College, I just got a Microsoft Azure Az-900 Certification, and besides coding and learning new stuff I ♥ cooking, gardening and the Foo Fighters, of course.</p>
+<p><h4>A little bit about me:</h4> I recently graduated from a Computer Programming program at Durham College, I just got a Microsoft Azure Az-900 Certification, and besides coding and learning new stuff I ♥ cooking, gardening and the Foo Fighters, of course.</p>
 <p>For any inquiries, please contact me at  **angelicakusik@outlook.com**.</p>
 <p>You can also connect with me on LinkedIn at [www.linkedin.com/in/angelica-kusik].</p>
 
