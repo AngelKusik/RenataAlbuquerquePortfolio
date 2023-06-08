@@ -56,9 +56,9 @@
 
 - 📫 For any inquiries, please contact me at  **angelicakusik@outlook.com**
 
-<p align="left">- ➕ Connect with me: 
-<a href="https://linkedin.com/in/angelica-kusik" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="angelica-kusik" height="30" width="40" /></a>
-</p>
+- ➕ Connect with me at [https://linkedin.com/in/angelica-kusik](https://linkedin.com/in/angelica-kusik)
+
+
 
 
 
