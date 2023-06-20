@@ -1,0 +1,84 @@
+/** VARIABLE DECLARATIONS **/
+:root {
+    --primary-color: #AD1457;
+    --secondary-color: #F48FB1;
+    --tertiary-color: #313131;
+}
+
+/** MAIN STYLES **/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: large;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/** NAVBAR **/
+.navbar {
+    padding: 2% 5%;
+}
+
+.navbar-brand {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.navbar-brand-bold {
+    font-weight: 900;
+}
+
+.nav-link {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.nav-item {
+    margin: 15px;
+}
+
+
+/** FOOTER **/
+#footer {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+.footer-signature {
+    font-family: 'Homemade Apple', cursive;
+    color: #66806A;
+    margin-left: 5px;
+}
+
+.footer-signature:hover {
+    color: #5B5B5B;
+}
+
+.bi-heart {
+    color: #66806A;
+}
+
+.social-icons > a {
+    font-size: 30px;
+    cursor: pointer;
+    color:  #1B2021;
+}
+
+.social-icons > a:hover {
+    font-size: 35px;
+    color: #5B5B5B;
+}
