@@ -6,7 +6,7 @@
 }
 
 /** MAIN STYLES **/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, q {
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -32,11 +32,27 @@ a {
 .navbar-brand {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
 }
 
-.navbar-brand-bold {
+@media (max-width: 768px){ 
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px){ 
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+.display-block {
+    display: block;
+}
+
+#navbar-brand-line1 {
     font-weight: 900;
 }
 
@@ -50,6 +66,83 @@ a {
     margin: 15px;
 }
 
+/** HOME PAGE **/
+#home-section-main {
+    padding-top: 5%;
+}
+
+#green-square {
+    position: relative;
+    background-color: #C4D7B2;
+    width: 680px;
+    height: 500px;  
+}
+
+#homePageCarousel {
+    position: absolute;
+    top: -10%;
+    left: 15%; 
+    width: 680px;
+    height: 580px;  
+}
+
+/** WORK PAGE **/
+#project1-desc, #project2-desc, #project3-desc {
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+}
+
+#project1 {
+    background-color: #5B5B5B;
+    color: white;
+}
+
+#project1-desc {
+    border-top: solid black 5px;
+    border-right: solid black 5px;
+}
+
+#project2-desc {
+    color: black;
+    border-bottom: solid black 5px;
+}
+
+#project1-img, #project2-img, #project3-img {
+    padding: 0;
+}
+
+#project2-img {
+    border-top: solid black 5px;
+}
+
+#project3-desc {
+    background-color: #B7B7B7;
+    border-bottom: solid black 5px;
+    border-right: solid black 5px;
+    color: black;
+}
+
+#quote {
+    background-color: #BFCCB5;  
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+    border-left: solid black 5px;
+}
+
+#quote img {
+    max-width: 100%;
+}
+
+q {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Homemade Apple', cursive;
+}
 
 /** FOOTER **/
 #footer {

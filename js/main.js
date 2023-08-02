@@ -1,7 +1,29 @@
 
 
 (function () {
-  
+  // Navbar responsiveness
+
+  // Execute function when page first loads
+  // TODO: Maybe move this inside an event listener for when the pages first loads?
+  updateNavbarBrand();
+
+  // Execute function when page resizes
+  window.addEventListener('resize', function () {
+    updateNavbarBrand();
+  });
+
+  function updateNavbarBrand(){
+    let line1 = $("#navbar-brand-line1")
+    
+    if (window.innerWidth < 1430){ 
+      line1.addClass("display-block");
+    }else{
+      line1.removeClass("display-block");
+    }
+  }
+
+
+ 
     let submitButton = $("#submitButton")
     let cancelButton = $("#resetButton")
     let messageArea = $('#messageArea')
