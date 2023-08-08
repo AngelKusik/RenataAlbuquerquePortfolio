@@ -125,6 +125,10 @@ a {
     color: black;
 }
 
+#project3-img {
+    background-color: #B7B7B7;
+}
+
 #quote {
     background-color: #BFCCB5;  
     padding-top: 3%;
@@ -142,6 +146,62 @@ q {
     font-size: 1.5rem;
     font-weight: 600;
     font-family: 'Homemade Apple', cursive;
+}
+
+/** CONTACT PAGE **/
+#contact-desc {
+    background-color: #5B5B5B;
+    color: white;
+    border-left: solid black 5px;
+    border-top: solid black 5px;
+}
+
+.contact-logo {
+    max-width: 35%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+#contact2-desc {
+    background-color: #BFCCB5; 
+}
+
+#contact3 {
+    background-color: #B7B7B7;
+    border-bottom: solid black 5px;
+    border-right: solid black 5px;
+}
+
+.contact-info {
+    font-size: 1.3rem;
+}
+
+/* Contact Form */
+
+.btn-green {
+    background-color: #BFCCB5; 
+    color: black;
+    font-weight: 300;
+}
+
+#contact-form-container {
+    font-family: 'Noto Sans', sans-serif;
+    padding: 3%;
+}
+
+#contact-form-container input, #contact-form-container textarea{
+    font-family: 'Cormorant Garamond', serif;
+}
+
+#contact-form-container input {
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: solid 2px #5B5B5B;
+}
+
+#contact-form-container textarea {
+    background-color: #B7B7B7;
+    border: none;
 }
 
 /** FOOTER **/

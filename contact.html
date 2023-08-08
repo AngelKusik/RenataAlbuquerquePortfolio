@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <!--Bootstrap v5.0 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Homemade+Apple&family=Noto+Sans:wght@200;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" href="assets/images/favicon-v2.ico" />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Contact</title>
+  </head>
+
+  <body>
+    <main class="container-fluid">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white navbarScroll">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#about"
+            ><span id="navbar-brand-line1">Renata Albuquerque</span>
+            <span id="navbar-brand-line2">Architectural Technician</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="projects.html">WORK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">PROFILE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Contact Form Section -->
+      <div id="contact1" class="container-fluid">
+        <div class="row">
+          <div id="contact-desc" class="col-md-6 p-5">
+            <h4 class="pt-4">LET'S WORK TOGETHER</h4>
+            <p class="pt-3">
+              Looking to get in contact? Simply fill in the form, and I'll be in touch soon.
+            </p>
+          </div>
+          <div id="contact-form-container" class="col-md-6">
+            <!--The div below displays the error messages originated during the form validation-->
+            <div id="messageArea" class="mt-2"></div>
+
+            <!-- form fields -->
+            <form id="contact-form" class="pt-3 px-5">
+              <label for="nameInput" class="mb-2">Your Name:</label>
+              <input
+                id="nameInput"
+                name="nameInput"
+                type="text"
+                class="form-control"
+                required
+                value=""
+              />
+              <label for="nameInput" class="my-2">Company:</label>
+              <input
+                id="companyInput"
+                name="companyInput"
+                type="text"
+                class="form-control"
+                required
+                value=""
+              />
+              <label for="emailInput" class="my-2">Email Address:</label>
+              <input
+                id="emailInput"
+                name="emailInput"
+                type="email"
+                class="form-control"
+                required
+                value=""
+              />
+              <label for="phoneInput" class="my-2">Phone Number:</label>
+              <input
+                id="phoneInput"
+                name="phoneInput"
+                type="text"
+                class="form-control"
+              />
+              <label for="subjectInput" class="my-2">Subject:</label>
+              <input
+                id="subjectInput"
+                name="subjectInput"
+                type="text"
+                class="form-control form-field"
+              />
+              <label for="messageInput" class="my-2">Message:</label>
+              <div class="mb-3 mt-3">
+                <textarea
+                  class="form-control"
+                  rows="5"
+                  id="messageInput"
+                  name="messageInput"
+                  required
+                  value=""
+                ></textarea>
+              </div>
+            </form>
+            <div class="pb-5 px-5">
+              <button
+                id="submitButton"
+                type="submit"
+                class="btn btn-lg btn-green mt-3"
+              >
+                <i class="bi bi-arrow-bar-right"></i> Send
+              </button>
+              <button
+                id="resetButton"
+                type="reset"
+                class="btn btn-lg btn-warning mt-3"
+              >
+                <i class="bi bi-x-circle-fill"></i> Clear
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Contact Form Section-->
+      <!-- Contact Image Filler Section -->
+      <div id="contact2" class="container-fluid">
+        <div class="row">
+          <div id="contact2-desc" class="col-md-6 d-flex align-items-center justify-content-center">
+            <img src="assets/images/logo-v2.png" alt="Renata Albuquerque Architectural Technician Logo" class="contact-logo">
+          </div>
+          <div id="contact2-img" class="col-md-6 g-0">
+            <img src="assets/images/samson-ZGjbiukp_-A-unsplash.jpg" alt="Tall Skyscrapers in Calgary, Canada. Photo by Samsoyyc. Free image from Unsplash." class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <!-- End Contact Image Filler Section-->
+      <!-- Contact Address Section -->
+      <div id="contact3" class="container-fluid">
+        <div class="row align-items-center">
+          <div id="contact-address" class="col text-center p-5 mt-4 mb-4">
+            <p class="contact-info">
+              Toronto | ON
+            </p>
+            <p class="contact-info">
+              +1 647 785 0942
+            </p>
+            <p class="contact-info">
+              arc.renata@outlook.com
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Contact Address Section -->
+      <!-- Footer section -->
+
+      <footer id="footer" class="text-center p-4">
+        <div class="container-fluid">
+          <!-- social media icons -->
+          <div class="social-icons mt-5">
+            <a href="#" target="_blank"><i class="bi bi-linkedin m-2"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-pinterest"></i></a>
+          </div>
+
+          <p class="mt-1 mb-1">Copyright &copy; <span id="year"></span></p>
+          <p class="mt-0">
+            Build with <i class="bi bi-heart"></i> by
+            <a
+              class="footer-signature"
+              href="https://www.linkedin.com/in/angelica-kusik/"
+              target="_blank"
+            >
+              Angelica Kusik</a
+            >
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Website scripts -->
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScrip -->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap Bundle with Popper-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
