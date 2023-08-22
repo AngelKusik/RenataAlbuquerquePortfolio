@@ -24,6 +24,10 @@ a {
     text-decoration: none !important;
 }
 
+.btn {
+    font-weight: 300;
+}
+
 /** NAVBAR **/
 .navbar {
     padding: 2% 5%;
@@ -181,7 +185,6 @@ q {
 .btn-green {
     background-color: #BFCCB5; 
     color: black;
-    font-weight: 300;
 }
 
 #contact-form-container {
@@ -203,6 +206,61 @@ q {
     background-color: #B7B7B7;
     border: none;
 }
+
+/** PROFILE PAGE **/
+.text-bold {
+    font-weight: 900;
+}
+
+.btn-dark-grey {
+    background-color: #5B5B5B; 
+    color: white;
+}
+
+.btn-light-grey {
+    background-color: #B7B7B7; 
+    color: black;
+}
+
+.btn-black {
+    background-color: black; 
+    color: white;
+}
+
+.bg-light-green {
+    background-color: #BFCCB5;
+}
+
+#profile-first-section {
+    background-color: #5B5B5B;
+    color: white;
+    border-top: black solid 5px;
+    border-left: black solid 5px;
+}
+
+#profile-img-1 {
+    background-color: #5B5B5B;
+    border-top: black solid 5px;
+}
+
+#profile-second-section {
+    border-right: black solid 5px;
+}
+
+hr {
+    border-top: 2px solid;
+    color: white;
+    opacity: 0.9;
+}
+
+.hr-black {
+    color: black;
+}
+
+#profile-buttons {
+    background-color: #BFCCB5;
+}
+
 
 /** FOOTER **/
 #footer {

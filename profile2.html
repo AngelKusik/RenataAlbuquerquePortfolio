@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <!--Bootstrap v5.0 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Homemade+Apple&family=Noto+Sans:wght@200;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" href="assets/images/favicon-v2.ico" />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Profile</title>
+  </head>
+
+  <body>
+    <main class="container-fluid">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white navbarScroll">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#about"
+            ><span id="navbar-brand-line1">Renata Albuquerque</span>
+            <span id="navbar-brand-line2">Architectural Technician</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="projects.html">WORK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">PROFILE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Profile First Section -->
+      <div id="profile" class="container-fluid">
+        <div class="row">
+        <!--Profile image displayed only on small screens-->
+          <div
+            id="profile-img-1"
+            class="d-md-none d-sm-inline-block col-md-5 p-0"
+          >
+            <img
+              src="assets/images/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash(2).jpg"
+              alt="Temporary filler for Profile Picture"
+              id="profile-pic"
+              class="img-fluid"
+            />
+          </div>
+          <!--First Section of Profile Resume (Education)-->
+          <div id="profile-first-section" class="col-md-7 px-5 pt-5">
+            <h4 class="pt-4 text-bold">RENATA ALBUQUERQUE</h4>
+            <h5>Experienced Architectural Technician</h5>
+            <!--First Graduation-->
+            <div class="row mt-5">
+              <h5 class="text-uppercase">Education</h5>
+              <hr />
+              <div class="col">
+                <h6 class="text-bold d-inline">Architectural Technician,</h6>
+                <p class="d-inline">Diploma</p>
+                <p class="mb-0">Sep. 2022 | Apr 2024</p>
+                <p>George Brown College, Toronto, ON</p>
+              </div>
+            </div>
+            <!--Second Graduation-->
+            <div class="row mt-2">
+              <div class="col">
+                <h6 class="text-bold d-inline">Architecture and Urbanist,</h6>
+                <p class="d-inline">Bachelor’s Degree</p>
+                <p class="mb-0">Feb. 2004 | Dec 2008</p>
+                <p class="mb-0">
+                  Universidade Santa Cecilia, Santos, SP, Brazil
+                </p>
+                <p>GPA 3.51 out of 4</p>
+              </div>
+            </div>
+            <!--Third Graduation-->
+            <!--TODO: Check with Renata if she wants to keep this or remove it because it's past 10 years ago-->
+            <div class="row mt-2">
+              <div class="col">
+                <h6 class="text-bold d-inline">Building Technician,</h6>
+                <p class="d-inline">Diploma</p>
+                <p class="mb-0">Aug. 2002 | Dec 2003</p>
+                <p>ETEC Mongagua, Santos, SP, Brazil</p>
+              </div>
+            </div>
+
+            <!--Second Section of Profile Resume (Experience) - Only displayed on xl screens-->
+            <!--First Experience-->
+            <div class="row mt-4 d-none d-xl-block">
+              <h5 class="text-uppercase">Experience</h5>
+              <hr />
+              <div class="col">
+                <h6 class="text-bold d-inline">Designer,</h6>
+                <p class="d-inline">Self-Employed</p>
+                <p class="mb-0">May. 2019 | Oct 2019</p>
+                <p class="mb-0">Toronto, ON</p>
+                <p>
+                  Residential measurement and AutoCAD project based on customer
+                  renovation to obtain a building permit.
+                </p>
+              </div>
+            </div>
+
+            <!--Second Experience-->
+            <div class="row mt-2 d-none d-xl-inline-block">
+              <div class="col">
+                <h6 class="text-bold d-inline">Designer,</h6>
+                <p class="d-inline">Premovale Soluçoes em Pre- Moldados</p>
+                <p class="mb-0">Jan. 2013 | Jun 2017</p>
+                <p class="mb-0">Sao Jose dos Campos, Brazil</p>
+                <p>
+                  Performed design and development of engineering precast
+                  concrete projects such as malls, airports, parking lots, and
+                  factories.
+                </p>
+              </div>
+            </div>
+
+            <!--Third Experience-->
+            <div class="row mt-2 d-none d-xl-inline-block">
+              <div class="col">
+                <h6 class="text-bold d-inline">Architect,</h6>
+                <p class="d-inline">Supporte Engenharia</p>
+                <p class="mb-0">Jul. 2009 | Mar 2011</p>
+                <p class="mb-0">Sao Jose dos Campos, Brazil</p>
+                <p>
+                  Responsible for the development of architectural projects such
+                  as factories and commercial buildings to obtain permits before
+                  City Hall.
+                </p>
+              </div>
+            </div>
+
+            <!--Fourth Experience-->
+            <div class="row mt-2 d-none d-xl-inline-block">
+              <div class="col">
+                <h6 class="text-bold d-inline">Designer,</h6>
+                <p class="d-inline">Sala de Projeto (Project Office)</p>
+                <p class="mb-0">Oct. 2004 | Jun 2009</p>
+                <p class="mb-0">Santos, SP, Brazil</p>
+                <p>
+                  Performed development of architectural, landscaping, and
+                  interior design projects. Commercial, residential, and public
+                  buildings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--Profile image displayed on md and > screen sizes-->
+          <div id="profile-img-1" class="d-none d-md-inline-block col-md-5 p-0">
+            <img
+              src="assets/images/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg"
+              alt="Temporary filler for Profile Picture"
+              id="profile-pic"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+
+        <!-- Second profile image displayed on sm, md and lg (not displayed on)-->
+        <div class="row d-xl-none">
+          <div id="profile-img-2" class="col-md-5 p-0 d-none d-md-inline-block">
+            <img
+              src="assets/images/ryan-ancill--mLE8mVgUKM-unsplash(2).jpg"
+              alt="Temporary architecture pic"
+              id="profile-pic"
+              class="img-fluid"
+            />
+          </div>
+          <!--Second Profile Resume section - only displayed on md and lg screen sizes-->
+          <div id="profile-second-section" class="col-md-7 px-5 pt-5">
+            <!--First Experience-->
+            <div class="row">
+              <h5 class="text-uppercase">Experience</h5>
+              <hr class="hr-black" />
+              <div class="col">
+                <h6 class="text-bold d-inline">Designer,</h6>
+                <p class="d-inline">Self-Employed</p>
+                <p class="mb-0">May. 2019 | Oct 2019</p>
+                <p class="mb-0">Toronto, ON</p>
+                <p>
+                  Residential measurement and AutoCAD project based on customer
+                  renovation to obtain a building permit.
+                </p>
+              </div>
+            </div>
+
+            <!--Second Experience-->
+            <div class="row mt-2">
+              <div class="col">
+                <h6 class="text-bold d-inline">Designer,</h6>
+                <p class="d-inline">Premovale Soluçoes em Pre- Moldados</p>
+                <p class="mb-0">Jan. 2013 | Jun 2017</p>
+                <p class="mb-0">Sao Jose dos Campos, Brazil</p>
+                <p>
+                  Performed design and development of engineering precast
+                  concrete projects such as malls, airports, parking lots, and
+                  factories.
+                </p>
+              </div>
+            </div>
+
+            <!--Third Experience-->
+            <div class="row mt-2">
+              <div class="col">
+                <h6 class="text-bold d-inline">Architect,</h6>
+                <p class="d-inline">Supporte Engenharia</p>
+                <p class="mb-0">Jul. 2009 | Mar 2011</p>
+                <p class="mb-0">Sao Jose dos Campos, Brazil</p>
+                <p>
+                  Responsible for the development of architectural projects such
+                  as factories and commercial buildings to obtain permits before
+                  City Hall.
+                </p>
+              </div>
+            </div>
+
+            <!--Fourth Experience-->
+            <div class="row mt-2 d-none d-xl-inline-block">
+              <div class="col">
+                <h6 class="text-bold d-inline">Designer,</h6>
+                <p class="d-inline">Sala de Projeto (Project Office)</p>
+                <p class="mb-0">Oct. 2004 | Jun 2009</p>
+                <p class="mb-0">Santos, SP, Brazil</p>
+                <p>
+                  Performed development of architectural, landscaping, and
+                  interior design projects. Commercial, residential, and public
+                  buildings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="profile-buttons" class="row">
+          <!-- Buttons -->
+          <div class="container align-items-center py-3">
+            <a
+              class="btn btn-lg btn-black py-3 my-4"
+              href="resume/RenataAlbuquerqueResume.pdf"
+              target="_blank"
+            >
+              <i class="bi bi-file-arrow-down-fill"></i>
+              Download Full Resume
+            </a>
+
+            <a
+              class="btn btn-lg btn-light-grey py-3 my-4"
+              href="contact.html"
+              target="_blank"
+            >
+              <i class="bi bi-envelope-fill"></i>
+              Contact
+            </a>
+          </div>
+        </div>
+        <!--Second profile image - only displayed on xs and sm screen sizes-->
+        <div class="row d-xs-inline-block d-sm-inline-block d-md-none">
+            <div id="profile-img-2" class="col-md-5 p-0">
+                <img
+                  src="assets/images/ryan-ancill--mLE8mVgUKM-unsplash(2).jpg"
+                  alt="Temporary architecture pic"
+                  id="profile-pic"
+                  class="img-fluid"
+                />
+              </div>
+        </div>
+      </div>
+
+      <!-- Footer section -->
+
+      <footer id="footer" class="text-center p-4">
+        <div class="container-fluid">
+          <!-- social media icons -->
+          <div class="social-icons mt-5">
+            <a href="#" target="_blank"><i class="bi bi-linkedin m-2"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-pinterest"></i></a>
+          </div>
+
+          <p class="mt-1 mb-1">Copyright &copy; <span id="year"></span></p>
+          <p class="mt-0">
+            Build with <i class="bi bi-heart"></i> by
+            <a
+              class="footer-signature"
+              href="https://www.linkedin.com/in/angelica-kusik/"
+              target="_blank"
+            >
+              Angelica Kusik</a
+            >
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Website scripts -->
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScrip -->
+    <script src="js/main.js"></script>
+
+    <!--Bootstrap Bundle with Popper-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
