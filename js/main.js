@@ -34,18 +34,18 @@
       //prevent the default form behaviour (so it won't submit the form)
       event.preventDefault()
   
-      console.log("inside event listener")
-  
-      //ContactMeFormValidate()
-  
+      console.log("inside submit button event listener")
+   
       let name = $("#nameInput").val()
-      let phone = $("#phoneInput").val()
+      let company = $("#companyInput").val()
       let email = $("#emailInput").val()
+      let phone = $("#phoneInput").val()
       let subject = $("#subjectInput").val()
       let message = $("#messageInput").val()
-  
+      
+      //Validate if required fields were filled out
       if(name == "" || email == "" || subject == "" || message == "")
-      {
+      { 
         //and then add the following class to #messageArea box, and show the  specific exception
         $('#messageArea').addClass("alert alert-danger").text("You must fill out the name, email, subject and mesage fields.").show()
         
@@ -61,6 +61,7 @@
           method: "POST",
           data: {
             name: name,
+            company: company,
             phone: phone,
             email: email,
             subject: subject,
@@ -68,7 +69,7 @@
           },
           dataType: "json",
           success: function () {
-            messageArea.removeClass("alert alert-danger mb-3").addClass("alert alert-success mb-3").text("Your message has been sent. I will get back to you as soon as possible!").show();
+            messageArea.removeClass("alert alert-danger mb-3").addClass("alert alert-success mb-3").text("Your message has been sent. I will get back to you soon").show();
             
             // Remove the message after 20 seconds
             setTimeout(function() {
@@ -127,34 +128,42 @@
     }
   
   
-    //Validates the information entered on the Contact Me form 
+    //Validates the information entered in the Contact form 
     function ContactMeFormValidate(){
-      //For the name: Filed cannot be blank, must enter at least first name. Middle name
-      // and last name are optional. No numbers or special characters allowed. Names must be separated
-      // by a whitespace
-      let namePattern = /^[A-Za-z]{2,25}(?:\s[A-Za-z]{2,25})?(?:\s[A-Za-z]{2,25})?$/g
-  
-      // For the phone number: This is not a required field, so the user doesn't have to fill it out.
-      // But if the user decide to enter the phone number it may start with + and country code, may start with (+country code),
-      // may not have country code, numbers may be separated by dash or whitespace. Only numbers allowed
-      // except by country code where + and () are acceptable
-      let phonePattern = /^(\()?(\+)?(\d{0,3})?(\s|-|\))?((?:\d{3,})(\s|-)?(?:\d{3,})(\s|-)?(?:\d{4,}))?$/g
-      
-      //Email pattern: Must enter at least two characters before @. Must have an @ and 1-24 letters, digits, hyphen or dots
-      //after @. Must have a dot before the domain and domain must be at least 2 letters long.
-      let emailPattern = /^([\w.-]{2,})+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g 
-      // Subject Pattern: Subject cannot be blank, must be between 1-100 characters, may not start or
-      //end with a whitespace, accepts any alphanumeric or special character in between.
-      let subjectPatter = /^[^\s].{0,99}[^\s]$/g
-      // Message pattern: Message cannot be blank, must be between 1-300 characters, may not start or
-      //end with a whitespace, accepts any alphanumeric or special character in between.
-      let messagePattern = /^[^\s].{0,298}[^\s]$/g
+      //Name: May not be blank, first name: min 2 characters - max 25 characters, no numbers, no special characters, 
+      //may be followed by a single space, second & third names: min 1 character - max 25 characters, optional, 
+      //second name may be followed by single space, no <>'""() allowed (protection agains code injection)
+      let namePattern = /^(?!.*[<>'"();,])[A-Za-z]{2,25}((?:\s)|(?:\s[A-Za-z]{1,25}))?((?:\s)|(?:\s[A-Za-z]{1,25}))?$/g
+      // before: /^[A-Za-z]{2,25}(?:\s[A-Za-z]{2,25})?(?:\s[A-Za-z]{2,25})?$/gm
     
-      ValidateInput("nameInput", namePattern, "I want to know your name, please fill out this field.")
-      ValidateInput("phoneInput", phonePattern, "Only numbers allowed here. Please enter a valid phone number.")
-      ValidateInput("emailInput", emailPattern, "Ops! Please enter a valid email address, so I can get back to you.")
-      ValidateInput("subjectInput", subjectPatter, "Please enter the subject of your message.")
-      ValidateInput("messageInput", messagePattern, "Please enter a message below and let me know why are you contacting me.")
+      //Company Name: Not required. May have max 30 characters. No <>'""() allowed (protection agains code injection)
+      let companyPattern = /^(?!.*[<>'"();,]).{0,30}$/g
+
+      //Email: May not be blank, min 2 characters before @ symbol, max 30 (including words characters, dots, hyphens, underscore), 
+      //must have @ symbol, min 2 max 30 characters after @. Must have a . before domain, domain must have min 2 max 30 characters. 
+      // No <>'""() allowed (protection agains code injection)
+      let emailPattern = /^(?!.*[<>'"();,])[\w.-]{2,30}@[a-zA-Z0-9.-]{2,30}\.[a-zA-Z]{2,30}$/g      
+
+      //Phone number: Not required. Country code and + symbol optional. Phone number must have 10 numbers all together
+      //or separated by a hiphen or space in the format xxx-xxx-xxxx or xxx xxx xxxxx
+      //TODO: Format 4168359851 witout spaces not working!!!!!!!!!!
+      let phonePattern = /^(?:\+\d{1,2}\s?)?(?:\(\d{3}\)\s?|\d{3}[\s-]?)?\d{3}[\s-]?\d{4}$/gm
+     
+      //Subject: Required field. Subject cannot be blank, must be between 2-55 characters, does
+      //not accept <>='' to avoid code injection
+      let subjectPatter = /^(?!.*[<>='])[^\s].{0,55}[^\s]$/gm
+
+      // Message: Required field, must be between 2-300 characters, does not accept the <>'' characters to
+      //avoid code injection.
+      let messagePattern = /^(?!.*[<>']).{2,300}$/gm
+      
+    
+      ValidateInput("nameInput", namePattern, "Ops! Don't forget to enter your name :)")
+      ValidateInput("companyInput", companyPattern, "Invalid company name, please try again")
+      ValidateInput("phoneInput", phonePattern, "There is something wrong with your phone number. Try typing it in the format '111-111-1111'")
+      ValidateInput("emailInput", emailPattern, "Ops, invalid email address! Please enter a valid email address, so I can get back to you")
+      ValidateInput("subjectInput", subjectPatter, "Please don't forget to enter the subject of your message")
+      ValidateInput("messageInput", messagePattern, "Please don't forget to leave me a message, I want to know how I can help you")
     }
   
   

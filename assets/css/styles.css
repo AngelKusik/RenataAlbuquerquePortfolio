@@ -71,7 +71,7 @@ a {
 }
 
 /** HOME PAGE **/
-#home-section-main {
+/* #home-section-main {
     padding-top: 5%;
 }
 
@@ -80,17 +80,73 @@ a {
     background-color: #C4D7B2;
     width: 680px;
     height: 500px;  
+} */
+
+
+/** HOME - Test **/
+#home-logo {
+    background-color: #5B5B5B; /** #5B5B5B; **/
+    border-top: black solid 5px;
+    border-left: black solid 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-#homePageCarousel {
-    position: absolute;
-    top: -10%;
-    left: 15%; 
-    width: 680px;
-    height: 580px;  
+#home-logo img {
+    max-width: 35%;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
 
-/** WORK PAGE **/
+.home-title {
+    margin-bottom: 15%;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+
+#home-social-icons {
+    background-color: #BFCCB5; /** #5B5B5B; **/
+    border-left: black solid 5px;
+}
+
+#home-img {
+    background-color: #BFCCB5; 
+    padding: 0;
+    border-top: black solid 5px;
+}
+
+.icons-bg {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 10px;
+}
+
+.icons {
+    font-size: 30px;
+    cursor: pointer;
+    color:  #5B5B5B;
+}
+
+.icons:hover {
+    font-size: 33px;
+    color: #5B5B5B;
+}
+
+#home-bottom-imgs {
+    padding: 0;
+}
+
+
+/** PROJECTS PAGE **/
 #project1-desc, #project2-desc, #project3-desc {
     text-align: left;
     padding-top: 5%;
@@ -179,6 +235,7 @@ q {
 .contact-info {
     font-size: 1.3rem;
 }
+
 
 /* Contact Form */
 
@@ -283,13 +340,3 @@ hr {
     color: #66806A;
 }
 
-.social-icons > a {
-    font-size: 30px;
-    cursor: pointer;
-    color:  #1B2021;
-}
-
-.social-icons > a:hover {
-    font-size: 35px;
-    color: #5B5B5B;
-}

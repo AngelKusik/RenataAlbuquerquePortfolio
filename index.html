@@ -37,11 +37,11 @@
   </head>
 
   <body>
-    <main>
+    <main class="container-fluid">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-white navbarScroll">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#about"
+          <a class="navbar-brand" href="index.html"
             ><span id="navbar-brand-line1">Renata Albuquerque</span>
             <span id="navbar-brand-line2">Architectural Technician</span></a
           >
@@ -79,119 +79,41 @@
       </nav>
 
       <!-- Home Section -->
-      <div id="home-section" class="container-fluid">
-
-        <div id="home-section-main" class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div id="green-square">
-                <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li
-                        data-target="#homePageCarousel"
-                        data-slide-to="0"
-                        class="active"
-                      ></li>
-                      <li data-target="#homePageCarousel" data-slide-to="1"></li>
-                      <li data-target="#homePageCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img
-                          class="d-block w-100"
-                          src="assets/images/HillsideHouse1.jpg"
-                          alt="First slide"
-                        />
-                      </div>
-                      <div class="carousel-item">
-                        <img
-                          class="d-block w-100"
-                          src="assets/images/HillsideHouse3.jpg"
-                          alt="Second slide"
-                        />
-                      </div>
-                      <div class="carousel-item">
-                        <img
-                          class="d-block w-100"
-                          src="assets/images/HillsideHouse2.jpg"
-                          alt="Third slide"
-                        />
-                      </div>
-                    </div>
-                    <a
-                      class="carousel-control-prev"
-                      href="#homePageCarousel"
-                      role="button"
-                      data-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </a>
-                    <a
-                      class="carousel-control-next"
-                      href="#homePageCarousel"
-                      role="button"
-                      data-slide="next"
-                    >
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </a>
-                  </div>
-
-            </div>
-
+      <div id="home-page" class="container-fluid">
+        <div class="row">
+          <div id="home-logo" class="col-md-5">
+            <img
+              src="assets/images/logo-v2.png"
+              alt="Renata Albuquerque Architectural Technician Logo"
+              class="home-logo"
+            />
+            <h4 class="home-title">RENATA ALBUQUERQUE</h4>
+          </div>
+          <div id="home-img" class="col-md-7">
+            <img
+              src="assets/images/HillsideHouse1.jpg"
+              class="d-block w-100"
+              alt="Hillside House Pool View"
+            />
+          </div>
         </div>
-        <!-- <div id="green-square" class="">
-            <img id="home-page-img" src="assets/images/HillsideHouse1.jpg" alt="Hillside House - Pool View">
-        </div> -->
-
-        <!-- <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li
-              data-target="#homePageCarousel"
-              data-slide-to="0"
-              class="active"
-            ></li>
-            <li data-target="#homePageCarousel" data-slide-to="1"></li>
-            <li data-target="#homePageCarousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                class="d-block w-100"
-                src="assets/images/HillsideHouse1.jpg"
-                alt="First slide"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="assets/images/HillsideHouse3.jpg"
-                alt="Second slide"
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="assets/images/HillsideHouse2.jpg"
-                alt="Third slide"
-              />
+        <!--TODO: Add Renata's social media links to the icons-->
+        <div id="home-social-icons" class="row">
+          <div class="col d-flex justify-content-end">
+            <div class="m-4">
+              <div class="icons-bg">
+                <a href="#" target="_blank"
+                  ><i class="bi bi-linkedin icons"></i
+                ></a>
+              </div>
+              <div class="icons-bg">
+                <a href="#" target="_blank"
+                  ><i class="bi bi-pinterest icons"></i
+                ></a>
+              </div>
             </div>
           </div>
-          <a
-            class="carousel-control-prev"
-            href="#homePageCarousel"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#homePageCarousel"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </a>
-        </div> -->
-
+        </div>
       </div>
 
       <!-- Footer section -->
@@ -199,12 +121,7 @@
       <footer id="footer" class="text-center p-4">
         <div class="container-fluid">
           <!-- social media icons -->
-          <div class="social-icons mt-5">
-            <a href="#" target="_blank"><i class="bi bi-linkedin m-2"></i></a>
-            <a href="#" target="_blank"><i class="bi bi-pinterest"></i></a>
-          </div>
-
-          <p class="mt-1 mb-1">Copyright &copy; <span id="year"></span></p>
+          <p class="mt-4 mb-1">Copyright &copy; <span id="year"></span></p>
           <p class="mt-0">
             Build with <i class="bi bi-heart"></i> by
             <a
