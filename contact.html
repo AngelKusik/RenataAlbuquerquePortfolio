@@ -28,7 +28,7 @@
     />
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" href="assets/images/favicon-v2.ico" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico" />
 
     <!-- Style Sheet -->
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -38,46 +38,11 @@
 
   <body>
     <main class="container-fluid">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white navbarScroll">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"
-            ><span id="navbar-brand-line1">Renata Albuquerque</span>
-            <span id="navbar-brand-line2">Architectural Technician</span></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav">
-              <!-- <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                            </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="projects.html">WORK</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="profile.html">PROFILE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+      <!--Navbar section-->
+      <div id="navbar-section">
+        <!--Navbar will be dinamically added to the page -->
+      </div>
+     
       <!-- Contact Form Section -->
       <div id="contact1" class="container-fluid">
         <div class="row">
@@ -92,59 +57,58 @@
             <div id="messageArea" class="mt-2"></div>
 
             <!-- form fields -->
-            <form id="contact-form" class="pt-3 px-5">
-              <label for="nameInput" class="mb-2">Your Name:</label>
+            <form id="contact-form" class="pt-3 px-5" novalidate>
+              <label for="firstName" class="mb-2">First Name<small>*</small>:</label>
               <input
-                id="nameInput"
-                name="nameInput"
-                type="text"
-                class="form-control is-invalid"
-                required
-                value=""
-              />
-              <label for="companyInput" class="my-2">Company:</label>
-              <input
-                id="companyInput"
-                name="companyInput"
+                id="firstName"
+                name="firstName"
                 type="text"
                 class="form-control"
-                maxlength="25"
                 value=""
               />
-              <label for="emailInput" class="my-2">Email Address:</label>
+              <label for="lastName" class="my-2">Last Name<small>*</small>:</label>
               <input
-                id="emailInput"
-                name="emailInput"
+                id="lastName"
+                name="lastName"
+                type="text"
+                class="form-control"
+                value=""
+              />
+              <label for="company" class="my-2">Company:</label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                class="form-control"
+                value=""
+              />
+              <label for="email" class="my-2">Email Address<small>*</small>:</label>
+              <input
+                id="email"
+                name="email"
                 type="email"
                 class="form-control"
-                required
                 value=""
               />
-              <label for="phoneInput" class="my-2">Phone Number:</label>
+              <label for="phone" class="my-2">Phone Number:</label>
               <input
-                id="phoneInput"
-                name="phoneInput"
+                id="phone"
+                name="phone"
                 type="text"
-                class="form-control"
+                class="form-control input-mask"
+                data-inputmask="'mask': '999-999-9999'"
               />
-              <label for="subjectInput" class="my-2">Subject:</label>
-              <input
-                id="subjectInput"
-                name="subjectInput"
-                type="text"
-                class="form-control form-field"
-              />
-              <label for="messageInput" class="my-2">Message:</label>
+              <label for="message" class="my-2">Message<small>*</small>:</label>
               <div class="mb-3 mt-3">
                 <textarea
                   class="form-control"
                   rows="5"
-                  id="messageInput"
-                  name="messageInput"
-                  required
+                  id="message"
+                  name="message"
                   value=""
                 ></textarea>
               </div>
+              <small id="required">Fields indicated with an * are required.</small>
             </form>
             <div class="pb-5 px-5">
               <button
@@ -196,27 +160,21 @@
       </div>
       <!-- End Contact Address Section -->
       <!-- Footer section -->
+      <div id="footer-section">
+        <!--Footer will be dinamically added to the page-->
+      </div>
 
-      <footer id="footer" class="text-center p-4">
-        <div class="container-fluid">
-          <p class="mt-4 mb-1">Copyright &copy; <span id="year"></span></p>
-          <p class="mt-0">
-            Build with <i class="bi bi-heart"></i> by
-            <a
-              class="footer-signature"
-              href="https://www.linkedin.com/in/angelica-kusik/"
-              target="_blank"
-            >
-              Angelica Kusik</a
-            >
-          </p>
-        </div>
-      </footer>
     </main>
 
     <!-- Website scripts -->
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--jQuery Validation Plugin (for the contact form)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <!--jQuery Input-mask Plugin (to enforce pone number format)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
     <!-- JavaScrip -->
     <script src="js/main.js"></script>

@@ -1,18 +1,131 @@
 
 
 (function () {
+  /** NAVBAR **/
+  let navbarContainer = $("#navbar-section");
+  let navbar = `
+      <nav class="navbar navbar-expand-lg navbar-light bg-white navbarScroll">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><span id="navbar-brand-line1">Renata Albuquerque</span>
+          <span id="navbar-brand-line2">Architectural Technician</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">WORK</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">PROFILE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>  `;
+
+  //Append navbar to page using jQuery's append function
+  navbarContainer.append(navbar);
+
   // Navbar responsiveness
 
   // Execute function when page first loads
-  // TODO: Maybe move this inside an event listener for when the pages first loads?
-  updateNavbarBrand();
+  UpdateNavbarBrand();
+
+  /** FOOTER **/
+  let footerContainer = $("#footer-section");
+  let footer = `
+      <footer id="footer" class="text-center p-4">
+      <div class="container-fluid">
+        <p class="mt-4 mb-1">Copyright &copy; <span id="year"></span></p>
+        <p class="mt-0">
+          Build with <i class="bi bi-heart"></i> by
+          <a
+            class="footer-signature"
+            href="https://www.linkedin.com/in/angelica-kusik/"
+            target="_blank"
+          >
+            Angelica Kusik</a
+          >
+        </p>
+      </div>
+    </footer>`;
+
+  //Append footer to page using jQuery's append function
+  footerContainer.append(footer);
+
+  //Dinamically getting the value of "year" for the footer
+  $('#year').text(new Date().getFullYear()); 
+
+  /** FORM VALIDATION  **/
+
+  //Calling form validation function when page loads to ensure fields are validated as user
+  //enters information and error messages are displayed or removed accordingly
+  ValidateContactForm()
+
+  /** VARIABLE DECLARATIONS **/
+  let submitButton = $('#submitButton')
+  let resetButton = $('#resetButton')
+  let messageArea = $('#messageArea')
+
+  /** EVENT LISTENERS **/
 
   // Execute function when page resizes
   window.addEventListener('resize', function () {
-    updateNavbarBrand();
+    UpdateNavbarBrand();
   });
 
-  function updateNavbarBrand(){
+    
+  /**
+   * submitButton:
+   * Validates data entered on the contact form upon clicked, triggers error messages if
+   * applicable and sends valid data to email using formspree
+   */
+  submitButton.on("click", (event) => {
+    //Prevent the default form behaviour (so it won't submit the form)
+    event.preventDefault()
+
+    // Validate the form using jQuery Validation Plugin
+    if ($("#contact-form").valid()) {
+      // If the form is valid, trigger its submission
+      $("#contact-form").submit();
+    }
+    // If the form is invalid, the error messages will be displayed automatically
+  })
+    
+  // /**
+  //  * resetButton:
+  //  * Clears out all data in the contact form
+  //  */
+  resetButton.on("click", function () {
+
+    // reset the form 
+    document.getElementById("contact-form").reset();
+  })
+
+  /** FUNCTIONS **/
+
+  /**
+   * UpdateNavbarBrand:
+   * Breaks down brand name into 2 lines on smaller screen sizes
+   */
+  function UpdateNavbarBrand(){
     let line1 = $("#navbar-brand-line1")
     
     if (window.innerWidth < 1430){ 
@@ -22,54 +135,85 @@
     }
   }
 
+  //Initialize the input mask plugin (for the phone number to enforce format 999-999-9999)
+  $('.input-mask').inputmask();
 
- 
-    let submitButton = $("#submitButton")
-    let cancelButton = $("#resetButton")
-    let messageArea = $('#messageArea')
-  
-    ContactMeFormValidate()
-    
-    submitButton.on("click", (event) => {
-      //prevent the default form behaviour (so it won't submit the form)
-      event.preventDefault()
-  
-      console.log("inside submit button event listener")
-   
-      let name = $("#nameInput").val()
-      let company = $("#companyInput").val()
-      let email = $("#emailInput").val()
-      let phone = $("#phoneInput").val()
-      let subject = $("#subjectInput").val()
-      let message = $("#messageInput").val()
-      
-      //Validate if required fields were filled out
-      if(name == "" || email == "" || subject == "" || message == "")
-      { 
-        //and then add the following class to #messageArea box, and show the  specific exception
-        $('#messageArea').addClass("alert alert-danger").text("You must fill out the name, email, subject and mesage fields.").show()
-        
-      }
-      else {
-        // reset the form 
-        document.getElementById("contactMeForm").reset();
-  
-        messageArea.hide()
-  
+   /**
+   * ValidateContactForm
+   * Validates the contact form data
+   */ 
+  function ValidateContactForm(){
+    $("#contact-form").validate({
+      errorClass: "error fail-alert is-invalid",
+      validClass: "valid success-alert",
+      rules: {
+        firstName : {
+          required: true,
+          minlength: 2,
+          maxlength: 30
+        },
+        lastName: {
+          required: true,
+          minlength: 2,
+          maxlength: 30
+        },
+        company: {
+          required: false,
+          maxlength: 30
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        phone: {
+          required: false,
+          phoneCustomValidation: true
+        },
+        message: {
+          required: true,
+          minlength: 2,
+          maxlength: 300
+        }
+      },
+      messages : {
+        firstName: {
+          required: "Please enter your first name",
+          minlength: "First name must have 2 characters minimum",
+          maxlength: "First name must have 30 characters maximum"
+        },
+        lastName: {
+          required: "Please enter your last name",
+          minlength: "Last name must have 2 characters minimum",
+          maxlength: "Last name must have 30 characters maximum"
+        },
+        company: {
+          maxlength: "Company name must have 30 characters maximum"
+        },
+        email: {
+          required: "Please enter your email address",
+          email: "Email address should be in the format: abc@domain.tld"
+        },
+        phone: {
+          phoneCustomValidation: "Phone number should be in the format: '999-999-9999'"
+        },
+        message: {
+          required: "Please enter your message",
+          minlength: "Message must have 2 characters minimum",
+          maxlength: "Message must have 300 characters maximum"
+        }
+      },
+      submitHandler: function (form){
+        // This function will be called when the form is submitted and passes validation
+        // You can access the form data using $(form).serialize() or other methods
+        console.log("inside submit handler")
+        //Send data to email
         $.ajax({
-          url: "https://formspree.io/f/mzbqvvdo",
+          url: "https://formspree.io/f/xoqowqjn",
           method: "POST",
-          data: {
-            name: name,
-            company: company,
-            phone: phone,
-            email: email,
-            subject: subject,
-            message: message,
-          },
+          data: $(form).serialize(),
           dataType: "json",
           success: function () {
-            messageArea.removeClass("alert alert-danger mb-3").addClass("alert alert-success mb-3").text("Your message has been sent. I will get back to you soon").show();
+            messageArea.removeClass("alert alert-danger mb-3").addClass("alert alert-success mb-3").text("Your message has been sent. I will get back to you as soon as possible!").show();
             
             // Remove the message after 20 seconds
             setTimeout(function() {
@@ -81,94 +225,45 @@
           },
           error: function () {
             messageArea.addClass("alert alert-danger mb-3").text("There was an error sending your message.").show();
-  
+
             // Remove the message after 20 seconds
             setTimeout(function() {
               messageArea.fadeOut('slow', function() {
                 messageArea.hide();
               });
             }, 20000);
-  
+
           },
         });
+
+        // Optionally, you can reset the form
+        form.reset();
+
+        // Prevent the default form submission behavior
+        return false;
       }
-    })
+    });
+  }
+
+  $.validator.addMethod('phoneCustomValidation', function(phone) {
+    phone = phone.replace(/\s+/g, ''); // Remove all spaces
   
-    cancelButton.on("click", function () {
-  
-      // reset the form 
-      document.getElementById("contactMeForm").reset();
-  
-    })
-  
-    function ValidateInput(inputFieldID, regularExpression, exception) {
-      messageArea.hide()
-  
-      $('#' + inputFieldID).on("blur", function() {
-          let inputText = $(this).val()
-  
-          if (!regularExpression.test(inputText)) {
-              // failure to match full name with regex
-  
-              $(this).trigger("focus").trigger("select")
-  
-              messageArea.addClass("alert alert-danger mb-3").text(exception).show()
-  
-              //disable register button
-              $("#submitButton").prop('disabled', true);
-          } else {
-              // success in matching full name with regex
-  
-              messageArea.removeAttr("class").hide()
-  
-              // enable register button
-              $("#submitButton").prop('disabled', false);
-          }
-      })
-    }
-  
-  
-    //Validates the information entered in the Contact form 
-    function ContactMeFormValidate(){
-      //Name: May not be blank, first name: min 2 characters - max 25 characters, no numbers, no special characters, 
-      //may be followed by a single space, second & third names: min 1 character - max 25 characters, optional, 
-      //second name may be followed by single space, no <>'""() allowed (protection agains code injection)
-      let namePattern = /^(?!.*[<>'"();,])[A-Za-z]{2,25}((?:\s)|(?:\s[A-Za-z]{1,25}))?((?:\s)|(?:\s[A-Za-z]{1,25}))?$/g
-      // before: /^[A-Za-z]{2,25}(?:\s[A-Za-z]{2,25})?(?:\s[A-Za-z]{2,25})?$/gm
+    // Match the phone number against the regex pattern
+    var isValid = phone.match(/^\d{3}-\d{3}-\d{4}$/); // Matches '999-999-9999' format
     
-      //Company Name: Not required. May have max 30 characters. No <>'""() allowed (protection agains code injection)
-      let companyPattern = /^(?!.*[<>'"();,]).{0,30}$/g
-
-      //Email: May not be blank, min 2 characters before @ symbol, max 30 (including words characters, dots, hyphens, underscore), 
-      //must have @ symbol, min 2 max 30 characters after @. Must have a . before domain, domain must have min 2 max 30 characters. 
-      // No <>'""() allowed (protection agains code injection)
-      let emailPattern = /^(?!.*[<>'"();,])[\w.-]{2,30}@[a-zA-Z0-9.-]{2,30}\.[a-zA-Z]{2,30}$/g      
-
-      //Phone number: Not required. Country code and + symbol optional. Phone number must have 10 numbers all together
-      //or separated by a hiphen or space in the format xxx-xxx-xxxx or xxx xxx xxxxx
-      //TODO: Format 4168359851 witout spaces not working!!!!!!!!!!
-      let phonePattern = /^(?:\+\d{1,2}\s?)?(?:\(\d{3}\)\s?|\d{3}[\s-]?)?\d{3}[\s-]?\d{4}$/gm
-     
-      //Subject: Required field. Subject cannot be blank, must be between 2-55 characters, does
-      //not accept <>='' to avoid code injection
-      let subjectPatter = /^(?!.*[<>='])[^\s].{0,55}[^\s]$/gm
-
-      // Message: Required field, must be between 2-300 characters, does not accept the <>'' characters to
-      //avoid code injection.
-      let messagePattern = /^(?!.*[<>']).{2,300}$/gm
-      
-    
-      ValidateInput("nameInput", namePattern, "Ops! Don't forget to enter your name :)")
-      ValidateInput("companyInput", companyPattern, "Invalid company name, please try again")
-      ValidateInput("phoneInput", phonePattern, "There is something wrong with your phone number. Try typing it in the format '111-111-1111'")
-      ValidateInput("emailInput", emailPattern, "Ops, invalid email address! Please enter a valid email address, so I can get back to you")
-      ValidateInput("subjectInput", subjectPatter, "Please don't forget to enter the subject of your message")
-      ValidateInput("messageInput", messagePattern, "Please don't forget to leave me a message, I want to know how I can help you")
+    if (isValid) {
+      return true; // Return true to indicate phone number matches pattern
+    } else {
+      return false; // Return false to indicate failure
     }
+  });
+    
+  //TODO: Add plugin for phone format, CHECK
+  //create regex pattern to validate phone number according to expected format, CHECK
+  //figure it when this validation should be called (submit, key up, blur or whatever), CHECK
+  // hook up part that sends info to email when valid, CHECK
+  //style error messages with bootstrap CHECK
+  //fix form to show fname and last name in the same line on big screen
+
   
-  
-    // FOOTER
-    //Dinamically getting the value of "year" for the footer
-    $('#year').text(new Date().getFullYear());
-  
-  })()
+})()
