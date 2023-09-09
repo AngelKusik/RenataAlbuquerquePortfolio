@@ -40,6 +40,7 @@ a {
     text-transform: uppercase;
 }
 
+/** On xs up to md screen sizes: **/
 @media (max-width: 768px){ 
     .navbar-brand {
         font-size: 1.5rem;
@@ -71,19 +72,7 @@ a {
 }
 
 /** HOME PAGE **/
-/* #home-section-main {
-    padding-top: 5%;
-}
 
-#green-square {
-    position: relative;
-    background-color: #C4D7B2;
-    width: 680px;
-    height: 500px;  
-} */
-
-
-/** HOME - Test **/
 #home-logo {
     background-color: #5B5B5B; /** #5B5B5B; **/
     border-top: black solid 5px;
@@ -110,13 +99,13 @@ a {
 
 #home-social-icons {
     background-color: #BFCCB5; /** #5B5B5B; **/
-    border-left: black solid 5px;
+    border-right: black solid 5px;
 }
 
 #home-img {
     background-color: #BFCCB5; 
     padding: 0;
-    border-top: black solid 5px;
+    border-bottom: black solid 5px;
 }
 
 .icons-bg {
@@ -168,20 +157,17 @@ a {
 #project2-desc {
     color: black;
     border-bottom: solid black 5px;
+    border-left: black solid 5px;
 }
 
 #project1-img, #project2-img, #project3-img {
     padding: 0;
 }
 
-#project2-img {
-    border-top: solid black 5px;
-}
 
 #project3-desc {
     background-color: #B7B7B7;
     border-bottom: solid black 5px;
-    border-right: solid black 5px;
     color: black;
 }
 
@@ -195,7 +181,7 @@ a {
     padding-bottom: 3%;
     padding-left: 8%;
     padding-right: 8%;
-    border-left: solid black 5px;
+    border-right: solid black 5px;
 }
 
 #quote img {
@@ -208,12 +194,28 @@ q {
     font-family: 'Homemade Apple', cursive;
 }
 
+/* Customize the carousel control arrows */
+.carousel-control-prev, .carousel-control-next {
+    font-size: 24px; /* Adjust the size as needed */
+    color: white;   /* Change the color to white or any other desired color */
+}
+  
+/* Customize the carousel control icons */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 40px; /* Adjust the width of the arrow icons */
+    height: 40px; /* Adjust the height of the arrow icons */
+    border: 2px solid white; /* Add a border around the icons for better visibility */
+    border-radius: 50%; /* Make the icons circular */
+    line-height: 40px; /* Center the icons vertically */
+    text-align: center; /* Center the icons horizontally */
+}
+  
 /** CONTACT PAGE **/
 #contact-desc {
     background-color: #5B5B5B;
     color: white;
-    border-left: solid black 5px;
-    border-top: solid black 5px;
+    border-top: black solid 5px;
+    border-left: black solid 5px;
 }
 
 .contact-logo {
@@ -229,19 +231,28 @@ q {
 #contact3 {
     background-color: #B7B7B7;
     border-bottom: solid black 5px;
-    border-right: solid black 5px;
+    border-top: solid black 5px;
 }
 
 .contact-info {
     font-size: 1.3rem;
 }
 
-
 /* Contact Form */
 
 .btn-green {
     background-color: #BFCCB5; 
+    border: 5px solid #BFCCB5;
     color: black;
+}
+
+.btn:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#resetButton {
+    background-color: #FFEECC;
+    border: 5px solid #FFEECC;
 }
 
 #contact-form-container {
@@ -264,7 +275,6 @@ q {
     border: none;
 }
 
-/** TEST **/
 label.error {
     color: red;
     font-size: 1rem;
@@ -276,6 +286,44 @@ input.error, textarea.error {
     border: 1px dashed red;
     font-weight: 300;
     color: red;
+}
+
+/** MEDIA STYLES **/
+/** CSS styles for screens with a width <= 767px (xm & sm) **/
+@media (max-width: 767px){ 
+    /** Contact Page: **/
+    #contact-form-container {
+        border-left: black solid 5px;
+    }
+
+    /** Projects **/
+    #project3-desc {
+        border-top: solid black 5px;
+    }
+}
+
+/** CSS styles for screens with a width >= 992px (lg - xl) **/
+@media (min-width: 992px) { 
+    /** Projects **/
+
+
+}
+
+/** CSS styles for screens with a width >= 768px (md - xl) **/
+@media (min-width: 768px) { 
+    /** Home Page */
+    #home-logo {
+        border-bottom: black solid 5px;
+    }
+    /** Contact Page: **/
+    #contact-form-container {
+        border-top: black solid 5px;
+    }
+
+    /** Projects **/
+    #project2-img {
+        border-bottom: solid black 5px;
+    }
 }
 
 /** PROFILE PAGE **/
@@ -295,6 +343,10 @@ input.error, textarea.error {
 
 .btn-black {
     background-color: black; 
+    color: white;
+}
+
+.btn-black:hover {
     color: white;
 }
 
@@ -332,7 +384,6 @@ hr {
     background-color: #BFCCB5;
 }
 
-
 /** FOOTER **/
 #footer {
     font-family: 'Noto Sans', sans-serif;
@@ -348,9 +399,46 @@ hr {
 
 .footer-signature:hover {
     color: #5B5B5B;
-}
+}phoneCustomValidation
 
 .bi-heart {
     color: #66806A;
+}
+
+/** BORDERS **/
+.bd-left {
+    border-left: black solid 5px;
+}
+
+.bd-right {
+    border-right: black solid 5px;
+}
+
+.bd-top {
+    border-top: black solid 5px;
+}
+
+.bd-bottom {
+    border-bottom: black solid 5px;
+}
+
+.bd-left-none {
+    border-left: none;
+}
+
+.bd-right-none {
+    border-right: none;
+}
+
+.bd-top-none {
+    border-top: none;
+}
+
+.bd-bottom-none {
+    border-bottom: none;
+}
+
+.bd-none {
+    border: none;
 }
 

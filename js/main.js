@@ -59,7 +59,6 @@
           <a
             class="footer-signature"
             href="https://www.linkedin.com/in/angelica-kusik/"
-            target="_blank"
           >
             Angelica Kusik</a
           >
@@ -79,6 +78,10 @@
   //enters information and error messages are displayed or removed accordingly
   ValidateContactForm()
 
+  //Calling the UpdateBorders function to dynamically adjust the borders of the pages as 
+  //viewport is resized.
+  UpdateBorders()
+
   /** VARIABLE DECLARATIONS **/
   let submitButton = $('#submitButton')
   let resetButton = $('#resetButton')
@@ -89,6 +92,7 @@
   // Execute function when page resizes
   window.addEventListener('resize', function () {
     UpdateNavbarBrand();
+    UpdateBorders();
   });
 
     
@@ -109,10 +113,10 @@
     // If the form is invalid, the error messages will be displayed automatically
   })
     
-  // /**
-  //  * resetButton:
-  //  * Clears out all data in the contact form
-  //  */
+  /**
+   * resetButton:
+   * Clears out all data in the contact form
+   */
   resetButton.on("click", function () {
 
     // reset the form 
@@ -208,7 +212,7 @@
         console.log("inside submit handler")
         //Send data to email
         $.ajax({
-          url: "https://formspree.io/f/xoqowqjn",
+          url: "https://formspree.io/f/xaygjgno", //Renata's formspree link
           method: "POST",
           data: $(form).serialize(),
           dataType: "json",
@@ -257,13 +261,49 @@
       return false; // Return false to indicate failure
     }
   });
+
+  /** Dynamically setting borders */
+  function UpdateBorders() {
+    //Declare variables for each screen breakpoint
+    let sm = 576
+    let md = 768
+    let lg = 992
+    let xl = 1200
+
+    //Get the window width
+    let windowWidth = $(window).width();
+
+    //If viewport is xm
+    if (windowWidth < md) { //If viewport is xm
+      //Contact Page: 
+      $("label[for='lastName']").addClass("my-2");
+      $("label[for='lastName']").removeClass("mb-2");
+
+    }else { 
+      //Contact Page: 
+      $("label[for='lastName']").removeClass("my-2");
+      $("label[for='lastName']").addClass("mb-2");
+
+    }
+
+  }
     
   //TODO: Add plugin for phone format, CHECK
   //create regex pattern to validate phone number according to expected format, CHECK
   //figure it when this validation should be called (submit, key up, blur or whatever), CHECK
   // hook up part that sends info to email when valid, CHECK
   //style error messages with bootstrap CHECK
-  //fix form to show fname and last name in the same line on big screen
+  //fix form to show fname and last name in the same line on big screen CHECK
+  //fix caresshouse carousel CHECK
+  //fix profile page display on medium/large CHECK
+  //fix borders on smaller screens CHECK
+  //remove target blank from href CHECK
+  //change form to submit to renata
+  //test everything CHECK
+  //add renata's socials link to icons on home page CHECK
+  //add linkedin icon to profile page? NOPE
+  //push to cloud
+  //mage renata's name on home page responsive to screen size live nav brand NOPE
 
   
 })()

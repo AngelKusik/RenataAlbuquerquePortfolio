@@ -58,22 +58,28 @@
 
             <!-- form fields -->
             <form id="contact-form" class="pt-3 px-5" novalidate>
-              <label for="firstName" class="mb-2">First Name<small>*</small>:</label>
-              <input
-                id="firstName"
-                name="firstName"
-                type="text"
-                class="form-control"
-                value=""
-              />
-              <label for="lastName" class="my-2">Last Name<small>*</small>:</label>
-              <input
-                id="lastName"
-                name="lastName"
-                type="text"
-                class="form-control"
-                value=""
-              />
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="firstName" class="mb-2">First Name<small>*</small>:</label>
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    class="form-control"
+                    value=""
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="mb-2">Last Name<small>*</small>:</label>
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    class="form-control"
+                    value=""
+                  />
+                </div>
+              </div>
               <label for="company" class="my-2">Company:</label>
               <input
                 id="company"
@@ -114,7 +120,7 @@
               <button
                 id="submitButton"
                 type="submit"
-                class="btn btn-lg btn-green mt-3"
+                class="btn btn-lg btn-green mt-3 mx-2"
               >
                 <i class="bi bi-arrow-bar-right"></i> Send
               </button>
